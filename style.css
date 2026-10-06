@@ -383,13 +383,34 @@ form button:focus {
     margin-top: 15px;
 }
 
-#facebook-radio:checked ~ .facebook-field,
+/* #facebook-radio:checked ~ .facebook-field,
 #instagram-radio:checked ~ .instagram-field,
 #email-radio:checked ~ .email-field,
 #text-radio:checked ~ .phone-field {
     display: block;
+}*/
+
+/*.contact-method-section label {
+    display: inline;
+}*/
+
+/* Print Button */
+
+.print-button {
+    display: block;
+    width: 150px;
+    margin: 10px 0 0 0;
+    background-color: white;
+    color: #ae5784;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: 0.3s ease;
 }
 
-.contact-method-section label {
-    display: inline;
+.print-button:hover {
+    background-color: #f7eefc;
+    transform: scale(1.05);
 }

@@ -22,7 +22,7 @@
 
         <div class="menu">
             <a href="index.html">Home</a>
-            <a href="about.html">About Me</a>
+            <a href="aboutJS.html">About Me</a>
             <a href="ai-patterns.html">Spotting AI Patterns</a>
             <a href="learn-crochet.html">Learning Crochet</a>
             <a href="markets.html">Upcoming Markets</a>
@@ -64,7 +64,7 @@
 
         <h2>Contact Me</h2>
 
-        <form method="get" autocomplete="on" action="under_construction.html">
+        <form id="contact-form" method="get" autocomplete="on" action="under_construction.html">
             
             <label for="name">Name:</label>
                 <input
@@ -84,40 +84,35 @@
                         <input
                             type="radio"
                             id="facebook-radio"
-                            name="contact_method">
-                            <!--value="Facebook"
-                            required>-->
+                            name="contact_method"
+                            value="Facebook"
+                            required>
 
-                        <label for="facebook-radio">Facebook</label>
+                        <label for="facebook-radio">Facebook<br></label>
 
                         <input
                             type="radio"
                                 id="instagram-radio"
-                                name="contact_method">
-                                <!--value="Instagram"
-                                required>-->
+                                name="contact_method"
+                                value="Instagram">
 
-                            <label for="instagram-radio">Instagram</label>
+                            <label for="instagram-radio">Instagram<br></label>
 
                         <input
                             type="radio"
                             id="email-radio"
-                            name="contact_method">
-                            <!--value="Email"
-                            required>-->
+                            name="contact_method"
+                            value="Email">
 
-                        <label for="email-radio">Email</label>
+                        <label for="email-radio">Email<br></label>
 
                         <input
                             type="radio"
                             id="text-radio"
-                            name="contact_method">
-                            <!--value="Mobile"
-                            required>-->
+                            name="contact_method"
+                            value="Mobile">
 
-                        <label for="text-radio">Mobile</label>
-
-                
+                        <label for="text-radio">Mobile<br></label>
 
                 <div class="facebook-field contact-field">
 
@@ -223,9 +218,108 @@
 
         </form>
 
+        <script>
+            document.getElementById("contact-form").addEventListener("submit", function (e) {
+
+                e.preventDefault();
+
+                const name = document.getElementById("name").value;
+                const reason = document.getElementById("contact-reason").value;
+                const message = document.getElementById("message").value;
+
+                let contactMethod = "";
+                let contactValue = "";
+
+                if (document.getElementById("facebook-radio").checked) {
+                    contactMethod = "Facebook";
+                    contactValue = document.getElementById("facebook-name").value;
+                }
+
+                if (document.getElementById("instagram-radio").checked) {
+                    contactMethod = "Instagram";
+                    contactValue = document.getElementById("instagram").value;
+                }
+
+                if (document.getElementById("email-radio").checked) {
+                    contactMethod = "Email";
+                    contactValue = document.getElementById("email-address").value;
+                }
+
+                if (document.getElementById("text-radio").checked) {
+                    contactMethod = "Mobile";
+                    contactValue = document.getElementById("phone").value;
+                }
+
+                const subject = "Website Contact Form";
+
+                const body =
+            `Name: ${name}
+
+            Preferred Contact Method: ${contactMethod}
+
+            Contact Details: ${contactValue}
+
+            Reason for Contact: ${reason}
+
+            Message:
+
+            ${message}`;
+
+                window.location.href =
+                    `mailto:Mariza.Whitehouse@student.shu.ac.uk?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            });
+        </script>
+
         <div class="back-home">
             <a href="index.html">Home</a>
         </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const radios = document.querySelectorAll('input[name="contact_method"]');
+
+            const fields = {
+                "facebook-radio": document.querySelector(".facebook-field"),
+                "instagram-radio": document.querySelector(".instagram-field"),
+                "email-radio": document.querySelector(".email-field"),
+                "text-radio": document.querySelector(".phone-field")
+            };
+
+            const inputs = {
+                "facebook-radio": document.getElementById("facebook-name"),
+                "instagram-radio": document.getElementById("instagram"),
+                "email-radio": document.getElementById("email-address"),
+                "text-radio": document.getElementById("phone")
+            };
+
+            // Hide all fields initially
+            function hideAllFields() {
+                Object.values(fields).forEach(field => {
+                    field.style.display = "none";
+                });
+
+                Object.values(inputs).forEach(input => {
+                    input.required = false;
+                });
+            }
+
+            // Show selected field
+            function showSelectedField(selectedId) {
+                hideAllFields();
+
+                fields[selectedId].style.display = "block";
+                inputs[selectedId].required = true;
+            }
+
+            radios.forEach(radio => {
+                radio.addEventListener("change", function () {
+                    showSelectedField(this.id);
+                });
+            });
+
+            hideAllFields();
+        });
+    </script>    
 
     </div>
 

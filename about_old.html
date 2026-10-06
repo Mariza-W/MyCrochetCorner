@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>About Me | My Crochet Corner</title>
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+    <nav class="hamburger-menu" aria-label="Main navigation">
+        <input type="checkbox" id="menu-toggle">
+
+        <label for="menu-toggle"
+            class="menu-icon"
+            aria-label="Open navigation menu"
+            tabindex="0">
+            ☰
+        </label>
+
+        <div class="menu">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Me</a>
+            <a href="ai-patterns.html">Spotting AI Patterns</a>
+            <a href="learn-crochet.html">Learning Crochet</a>
+            <a href="markets.html">Upcoming Markets</a>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <h1>About Me</h1>
+
+        <img src="profile.JPG"
+             class="profile-image"
+             alt="Profile photo">
+
+        <p>
+            Hello! 👋 
+            <br>
+            <br>
+            I'm Mariza and crochet is one of my favourite hobbies.
+            I particularly enjoy creating amigurumi characters🧸, pattern testing📝,
+            hunting for great wool bargains 💰 and free patterns 🎁.
+        </p>
+
+        <p>
+            I started my crochet journey in 2014 and have since sold handmade
+            creations, participated in pattern tests 🤝, and shared my projects on Instagram.
+        </p>
+
+        <p>
+            📸 I share photos of my crochet projects on Instagram under the handle @knotsoinnocent25.
+            Check it out if you are bored, looking for inspiration ✨, or simply curious!     
+        </p>
+
+        <a href="https://www.instagram.com/knotsoinnocent25/"
+            target="_blank"
+            class="insta-button">
+            Instagram
+        </a>
+
+        <h2>Contact Me</h2>
+
+        <form method="get" autocomplete="on" action="under_construction.html">
+            
+            <label for="name">Name:</label>
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="e.g. Knotty"
+                    minlength="2"
+                    autocomplete="name"
+                    required>
+
+            <div class="contact-method-section">
+                
+                <fieldset>
+                    <legend>Preferred Contact Method:</legend>
+
+                        <input
+                            type="radio"
+                            id="facebook-radio"
+                            name="contact_method">
+                            <!--value="Facebook"
+                            required>-->
+
+                        <label for="facebook-radio">Facebook<br></label>
+
+                        <input
+                            type="radio"
+                                id="instagram-radio"
+                                name="contact_method">
+                                <!--value="Instagram"
+                                required>-->
+
+                            <label for="instagram-radio">Instagram<br></label>
+
+                        <input
+                            type="radio"
+                            id="email-radio"
+                            name="contact_method">
+                            <!--value="Email"
+                            required>-->
+
+                        <label for="email-radio">Email<br></label>
+
+                        <input
+                            type="radio"
+                            id="text-radio"
+                            name="contact_method">
+                            <!--value="Mobile"
+                            required>-->
+
+                        <label for="text-radio">Mobile<br></label>
+
+                
+
+                <div class="facebook-field contact-field">
+
+                    <label for="facebook-name">Facebook Name:</label>
+
+                    <input 
+                        type="text"
+                        id="facebook-name"
+                        name="facebook_name"
+                        maxlength="50"
+                        minlength="5"
+                        placeholder="e.g. Knotty Me">
+                </div>
+
+                <div class="instagram-field contact-field">
+
+                    <label for="instagram">Instagram:</label>
+
+                    <input
+                        type="text"
+                        id="instagram"
+                        name="instagram"
+                        maxlength="30"
+                        minlength="1"
+                        placeholder="e.g. @knotsoinnocent25">
+                </div>
+
+                <div class="email-field contact-field">
+
+                    <label for="email-address">Email:</label>
+
+                    <input
+                        type="email"
+                        id="email-address"
+                        name="email"
+                        maxlength="320"
+                        minlength="3"
+                        autocomplete="email"
+                        placeholder="e.g. KnotSoInnocent@email.com">
+                </div>
+
+                <div class="phone-field contact-field">
+
+                    <label for="phone">Mobile:</label>
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        placeholder="07123456789"
+                        autocomplete="tel"
+                        pattern="^07\d{9}$">
+                </div>
+
+                </fieldset>
+
+            </div>
+
+            <label for="contact-reason">Reason for Contact:</label>
+
+            <select
+                id="contact-reason"
+                name="contact_reason"
+                required>
+
+                <option value="">
+                    Please select
+                </option>
+
+                <option value="comments">
+                    Comments
+                </option>
+
+                <option value="commission">
+                    Commission Requests
+                </option>
+
+                <option value="question">
+                    Ask a Question
+                </option>
+
+                <option value="pattern-test">
+                    Ask me to test your pattern
+                </option>
+
+            </select>
+
+            <label for="message">Message:</label>
+
+            <textarea
+                id="message"
+                name="message"
+                rows="8"
+                maxlength="500"
+                minlength="10"
+                autocorrect="on"
+                placeholder="Enter your message here..."
+                required></textarea>
+
+            <button type="submit">
+                Submit
+            </button>                                                   
+
+        </form>
+
+        <div class="back-home">
+            <a href="index.html">Home</a>
+        </div>
+        
+
+    </div>
+
+        <footer>
+            knotsoinnocent25 | Crocheting for the public since 2025 
+        </footer>
+</body>
+
+</html>
