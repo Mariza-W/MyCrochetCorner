@@ -38,6 +38,19 @@
              class="profile-image"
              alt="Profile photo">
 
+        
+        <button id="todaysDate">Click here for Today`s date:</button>
+
+        <p id="currentdate"></p>
+
+        <script>
+            function displayDate() {
+                document.getElementById("currentdate").innerHTML = Date();
+            }
+
+            document.getElementById("todaysDate").addEventListener("click",displayDate);
+        </script>
+
         <div class="markets-container">
 
             <div class="market-card">
