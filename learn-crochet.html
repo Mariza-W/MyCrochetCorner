@@ -26,17 +26,17 @@
             <a href="aboutJS.html">About Me</a>
             <a href="ai-patterns.html">Spotting AI Patterns</a>
             <a href="learn-crochet.html">Learning Crochet</a>
-            <a href="markets.html">Upcoming Markets</a>
+            <a href="markets.html">Markets</a>
         </div>
     </nav>
 
-    <div class="container">
-
-        <h1>How can I learn to crochet?</h1>
+    <div class="container secondary-page">
 
         <img src="profile.JPG"
              class="profile-image"
              alt="Profile photo">
+
+        <h1>How can I learn to crochet?</h1>
 
         <p>
             Learning to crochet can seem a little overwhelming at first, but the key is to start with the basics and practise regularly. 
@@ -52,6 +52,118 @@
             As your skills grow 📈, you can move on to larger projects such as blankets 🛏️, cushions 🛋️, cardigans 👚, and adorable amigurumi characters. 🧸 
             Remember, crochet is a skill that improves with patience, practice, and a willingness to learn from mistakes. 🌟
         </p>
+
+        <h2>Colour Inspiration</h2>
+
+        <p>
+            Choose a colour and discover its name and matching colour scheme for your next crochet project.
+        </p>
+
+        <div class="colour-tool">
+
+            <div class="colour-picker-row">
+                <label for="colour-picker" style="color:#894bb8; font-size:1.2rem; font-weight:bold;">
+                    Select a colour:
+                </label>
+
+                <input
+                    type="color"
+                    id="colour-picker"
+                    value="#ae5784">
+
+            <button id="colour-button" type="button">
+                Find matching colours
+            </button>
+
+            </div>
+
+            <div id="colour-results">
+
+                <div id="main-colour"></div>
+
+                <h3>🧶 What is this colour called?</h3>
+                <p id="colour-name"></p>
+
+                <h3>🌈 Colours that work well together</h3>
+
+                <div id="palette"></div>
+
+            </div>
+
+        </div>
+
+        <script>
+
+        document.getElementById("colour-button").addEventListener("click", function () {
+
+            const colour =
+                document.getElementById("colour-picker")
+                .value
+                .replace("#", "");
+
+            fetch(`https://www.thecolorapi.com/id?hex=${colour}`)
+
+                .then(response => response.json())
+
+                .then(data => {
+
+                    document.getElementById("main-colour").style.backgroundColor =
+                        data.hex.value;
+
+                    document.getElementById("colour-name").textContent =
+                        data.name.value;
+
+                    return fetch(
+                        `https://www.thecolorapi.com/scheme?hex=${colour}&mode=analogic&count=4`
+                    );
+
+                })
+
+                .then(response => response.json())
+
+                .then(data => {
+
+                    const palette =
+                        document.getElementById("palette");
+
+                    palette.innerHTML = "";
+
+                    data.colors.forEach(colour => {
+
+                        const colourCard = document.createElement("div");
+                        colourCard.classList.add("colour-card");
+
+                        const swatch = document.createElement("div");
+                        swatch.classList.add("colour-swatch");
+                        swatch.style.backgroundColor = colour.hex.value;
+
+                        const label = document.createElement("p");
+                        label.classList.add("colour-label");
+                        label.textContent = colour.name.value;
+
+                        colourCard.appendChild(swatch);
+                        colourCard.appendChild(label);
+
+                        palette.appendChild(colourCard);
+
+                    });
+
+                })
+
+                .catch(error => {
+
+                    console.error(error);
+
+                    alert(
+                        "Unable to retrieve colour information."
+                    );
+
+                });
+
+        });
+
+        </script>
+
 
         <h2>Helpful resources:</h2>
             <p>
