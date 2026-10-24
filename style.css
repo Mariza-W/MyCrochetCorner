@@ -500,3 +500,52 @@ form button:focus {
     color: #ae5784;
     font-weight: bold;
 }
+
+/* Back to Top Button (jQuery) */
+#backToTop {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 50%;
+    background-color: #894bb8;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+#backToTop:hover {
+    background-color: #ae5784;
+}
+
+/* to Top Button (JavaScript) */
+#toTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+
+    width: 60px;
+    height: 60px;
+
+    border: none;
+    border-radius: 50%;
+
+    background-color: #894bb8;
+    color: white;
+
+    font-size: 1.5rem;
+    cursor: pointer;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+#toTopBtn:hover {
+    background-color: #ae5784;
+}

@@ -10,23 +10,151 @@
 
     <div class="container">
 
-        <h1>🚧 Form Under Construction 🚧</h1>
+        <h1>🎡 Playground 🎠</h1>
 
         <p>
-            Thank you for your interest.
+            On this page, I try out different things I learning on the module,  
+            but don't necessarily want to incorporate into my final version.
         </p>
 
         <p>
-            This form is currently under construction and is not yet accepting submissions.
+            This page is also deliberately only "available" from the menu on the Home page, 
+            allowing me to "hide" it with ease.
         </p>
 
         <p>
-            Please check back later.
+            This page also deliberately omits the menu options displayed on all the other pagesas well as the footer 
+            and some other "template" elements...
         </p>
 
-        <a href="about.html">Return to About Me</a>
+        <h3>Experiment idea</h3>
+        <p>
+            I am toying with the idea of adding a "return to top" button.
+            This can be done with jQuery or just simple JavaScript.
+            The button should appear as soon as the user has scrolled a certain "distance" down the page.
+            I do not want to have to alter the code for each of my pages, so I am also looking into ways to 
+            do it in one place and then just reference that location on all my respective subpages.
+        </p>
+
+        <h3>I found this info to help me with the jQuery:</h3>
+
+        <p>
+            Ever read a really long blog post or article and then had to scroll all the way up to the top of the screen 
+            to get to the menu? It can be a little frustrating. It’s easy to fix, you can have a fixed menu or as you’ll 
+            see here you can provide a quick and stylish way to get back to the top with <b>jQuery</b>.
+        </p>
+
+        <p>
+            Using HTML, we need to add a "back to top" link. We then need to style and position it.
+            Using CSS, the position is set to fixed and it is moved to the bottom right of the screen.
+            Some other styling can also be set, such as colour and opacity.
+        </p>
+
+        <p>
+            Next, we need to add jQuery to the page.<br>
+            <br>
+            The jQuery is pretty simple:<br>
+            1. set offset (after how much scrolling should the button appear)<br>
+            2. how long do we want the effect to last? <br>
+            3. make the button visible when the user scrolls
+        </p>
+
+        <p>
+            <i>Reference:<br></i>
+            DeveloperDrive Team. (2013, July 18). <i>Using jQuery to add a dynamic “back to top” floating button with smooth scroll.</i> 
+            Web Development Blog, News and Tutorials | DeveloperDrive.Com. 
+            https://www.developerdrive.com/using-jquery-to-add-a-dynamic-back-to-top-floating-button-with-smooth-scroll/
+        </p>
+
+        <h3>I found this on the W3Schools tutorials:</h3>
+
+        <p>
+            It is easy to create a button that becomes visible when the user starts to scroll the page using
+            HTML and CSS.
+        </p>
+        
+        <p>
+            First of all, you create a button that will take the user to the top of the page when clicked on.
+        </p>
+
+        <p>
+            Next, you style the button using CSS.
+        </p>
+
+        <p>
+            Lastly, you create a button that will take the user to the top of the page when clicked on.
+        </p>
+
+        <p>
+            <i>Reference:<br></i>
+                W3Schools. (2019). <i>How to create a scroll back to top button.</i> 
+                W3schools.Com. https://www.w3schools.com/howto/howto_js_scroll_to_top.asp
+        </p>
+
+        <h3>Using an external JavaScript file to add the button to all pages:</h3>
+
+        <p>
+            You can use an external JavaScript file with the script tag to essentially repeat the same 
+            "instructions" on every relevant page.
+        </p>
+
+        <p>
+            On my Home page, I first used inline JavaScript to add the "toTop" button,
+            but then I externalised the same code into a .js file to be referenced on all subpages.
+            This makes the code reusable and follows the "write less, do more" idea.
+        </p>
+
+        <p>
+            <i>Reference:<br></i>
+            Altcademy Team. (2023, August 29). 
+            <i>How to include external JavaScript in HTML.</i>
+            Altcademy Blog. https://www.altcademy.com/blog/how-to-include-external-javascript-in-html/
+        </p>
+
+        <div class="back-home">
+            <a href="index.html">Home</a>
+        </div>
 
     </div>
+
+    <button id="backToTop" aria-label="Back to top">
+        ⬆
+    </button>
+
+    <!-- jQuery Library -->
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- Back to Top Script -->
+
+    <script>
+
+        $(document).ready(function () {
+
+            $(window).scroll(function () {
+
+                if ($(this).scrollTop() > 0) {
+                    $("#backToTop").fadeIn();
+                } else {
+                    $("#backToTop").fadeOut();
+                }
+
+            });
+
+            $("#backToTop").click(function () {
+
+                $("html, body").animate(
+                    {
+                        scrollTop: 0
+                    },
+                    500
+                );
+
+            });
+
+        });
+
+    </script>
 
 </body>
 
