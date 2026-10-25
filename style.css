@@ -30,69 +30,11 @@ body {
     top: 10px;
 }
 
-/* Navigation Menu */
-
-.hamburger-menu {
-    position: fixed;
-    top: 15px;
-    left: 15px;
-    z-index: 1000;
-}
-
-#menu-toggle {
-    position: absolute;
-    opacity: 0;
-}
-
-.menu-icon {
-    font-size: 30px;
-    cursor: pointer;
-    padding: 10px;
-    border-radius: 8px;
-    display: block;
-    color: #7a4f9a;
-}
-
-.menu-icon:focus {
-    outline: 3px solid white;
-    outline-offset: 5px;
-}
-
-#menu-toggle:focus + .menu-icon {
-    outline: 3px solid white;
-    outline-offset: 3px;
-}
-
-.menu {
-    display: none;
-    background: white;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    margin-top: 10px;
-}
-
-#menu-toggle:checked ~ .menu {
-    display: block;
-}
-
-.menu a {
-    display: block;
-    padding: 15px;
-    margin-bottom: 8px;
-    text-align: center;
-}
-
-.menu a:focus {
-    outline: 3px solid #7a4f9a;
-    outline-offset: 3px;
-}
-
 /* Headings Styling */
-
 h1 {
     color: #b85c8b;
     text-align: center;
+    margin-bottom: 60px;
 }
 
 h2 {
@@ -109,7 +51,6 @@ h3 {
 }
 
 /* Text Styling */
-
 p {
     font-size: 18px;
 }
@@ -136,7 +77,6 @@ button:focus,
 }
 
 /* Images */
-
 .project-image {
     margin-top: 30px;
 }
@@ -160,13 +100,11 @@ button:focus,
 }
 
 /* Project Details */
-
 .project-details {
     text-align: left;
 }
 
 /* IG Button */
-
 .insta-button {
     display: block;
     width: 150px;
@@ -187,7 +125,6 @@ button:focus,
 }
 
 /* Markets */
-
 .markets-container {
     display: flex;
     flex-direction: column;
@@ -216,11 +153,12 @@ button:focus,
 }
 
 /* Layout Helpers */
-
 .container {
-    max-width: 80%;
-    margin: auto;
+    margin-top: 20px;
+    padding-left: 60px !important;
+    padding-right: 60px !important;
 }
+
 
 .back-home {
     margin-top: 30px;
@@ -228,7 +166,6 @@ button:focus,
 }
 
 /* Footer */
-
 footer {
     margin-top: 40px;
     text-align: center;
@@ -236,51 +173,7 @@ footer {
     font-size: 14px;
 }
 
-/* Desktop vs Mobile Menu */
-
-@media (min-width: 768px) {
-
-    .hamburger-menu {
-        position: static;
-        display: flex;
-        justify-content: center;
-        margin-bottom: 30px;
-    }
-
-    .menu-icon {
-        display: none;
-    }
-
-    #menu-toggle {
-        display: none;
-    }
-
-    .menu {
-        display: flex !important;
-        flex-direction: row;
-        gap: 15px;
-        background: transparent;
-        box-shadow: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    .menu a {
-        margin-bottom: 0;
-        padding: 12px 20px;
-        border-radius: 8px;
-        white-space: nowrap;
-    }
-
-    .card-grid {
-        max-width: 1000px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-}
-
 /* Contact Form */
-
 form {
     display: flex;
     flex-direction: column;
@@ -289,7 +182,6 @@ form {
 }
 
 /* Labels */
-
 form label {
     display: block;
     margin-bottom: 5px;
@@ -298,7 +190,6 @@ form label {
 }
 
 /* Space between radio buttons and next section */
-
 fieldset {
     border: 2px solid #e6d5f0;
     border-radius: 15px;
@@ -313,7 +204,6 @@ legend {
 }
 
 /* Radio button layout */
-
 fieldset input[type="radio"] {
     margin-right: 5px;
 }
@@ -324,7 +214,6 @@ fieldset label {
 }
 
 /* Input fields */
-
 form input[type="text"],
 form input[type="email"],
 form input[type="tel"],
@@ -340,7 +229,6 @@ form textarea {
 }
 
 /* Focus styling */
-
 form input:focus,
 form select:focus,
 form textarea:focus {
@@ -350,21 +238,18 @@ form textarea:focus {
 }
 
 /* Contact method fields */
-
 .contact-field {
     display: flex;
     flex-direction: column;
 }
 
 /* Message box */
-
 textarea {
     resize: vertical;
     min-height: 150px;
 }
 
 /* Submit button */
-
 form button {
     width: fit-content;
     padding: 12px 24px;
@@ -402,19 +287,7 @@ form button:focus {
     margin-top: 15px;
 }
 
-/* #facebook-radio:checked ~ .facebook-field,
-#instagram-radio:checked ~ .instagram-field,
-#email-radio:checked ~ .email-field,
-#text-radio:checked ~ .phone-field {
-    display: block;
-}*/
-
-/*.contact-method-section label {
-    display: inline;
-}*/
-
 /* Print Button */
-
 .print-button {
     display: block;
     width: 150px;
@@ -434,6 +307,7 @@ form button:focus {
     transform: scale(1.05);
 }
 
+/* Colour Picker tool */
 .colour-tool {
     margin-top: 20px;
 }
@@ -548,4 +422,65 @@ form button:focus {
 
 #toTopBtn:hover {
     background-color: #ae5784;
+}
+
+/* Bootstrap Accordion */
+.crochet-accordion {
+    border: 1px solid #e6d5f0;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.crochet-accordion .accordion-button {
+    background-color: #f7eefc;
+    color: #894bb8;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.crochet-accordion .accordion-button:not(.collapsed) {
+    background-color: #f0dff8;
+    color: #894bb8;
+}
+
+.crochet-accordion .accordion-button:focus {
+    box-shadow: none;
+    border-color: #894bb8;
+}
+
+.crochet-accordion .accordion-body {
+    background-color:#e3a8f9;
+}
+
+.container h1 {
+    color: #b85c8b;
+    text-align: center;
+}
+
+/* Bootstrap navbar */
+.navbar {
+    background-color: #e2c6f1 !important;
+    border-bottom: 2px solid #e6d5f0;
+}
+
+.navbar-brand {
+    color: whitesmoke !important;
+    font-weight: bold;
+}
+
+.nav-link {
+    color: #894bb8 !important;
+    margin-left: 5px;
+    transition: 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: #f0dff8;
+    color: #894bb8 !important;
+}
+
+.nav-pills .nav-link.active {
+    background-color: #894bb8 !important;
+    color: white !important;
 }
